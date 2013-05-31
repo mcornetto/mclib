@@ -1,0 +1,11 @@
+{
+	"name": "MC Library",
+	"description": "A small library of useful functions",
+	"version": "0.1.0",
+	"url": "http://techn0place.blogspot.com/",
+	"options": {
+		"outdir": "build/doc",
+		"paths": "*",
+		"exclude": "backup,build,yuicompressor-2.4.7.jar,node_modules"
+	}
+}

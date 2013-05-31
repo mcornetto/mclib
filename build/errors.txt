@@ -1,0 +1,14 @@
+mclib.js: line 133, col 22, Possible strict violation.
+mclib.js: line 177, col 22, Possible strict violation.
+mclib.js: line 202, col 11, Missing semicolon.
+mclib.js: line 1139, col 6, Missing semicolon.
+mclib.js: line 1168, col 13, Missing semicolon.
+mclib.js: line 1251, col 14, Missing semicolon.
+mclib.js: line 1262, col 13, Missing semicolon.
+mclib.js: line 1317, col 47, Missing semicolon.
+mclib.js: line 1337, col 14, Missing semicolon.
+mclib.js: line 1340, col 6, Missing semicolon.
+mclib.js: line 784, col 17, 'setTimeout' is not defined.
+mclib.js: line 869, col 21, 'setTimeout' is not defined.
+
+12 errors

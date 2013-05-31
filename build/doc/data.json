@@ -1,0 +1,1061 @@
+{
+    "project": {
+        "name": "MC Library",
+        "description": "A small library of useful functions",
+        "version": "0.1.0",
+        "url": "http://techn0place.blogspot.com/"
+    },
+    "files": {
+        "D:\\Projects\\Programming\\mclib\\mclib.js": {
+            "name": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "modules": {
+                "mclib": 1
+            },
+            "classes": {
+                "mclib.object": 1,
+                "mclib.Event": 1,
+                "mclib.pouch": 1,
+                "mclib.ProcessList": 1,
+                "mclib.hooker[setkey].mclib.hooker": 1,
+                "mclib.inject": 1,
+                "mclib.inject.Scripts": 1,
+                "mclib.inject.Styles": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mclib": 1,
+                "mclib.object": 1,
+                "mclib.Event": 1,
+                "mclib.pouch": 1,
+                "mclib.ProcessList": 1,
+                "mclib.hooker": 1,
+                "mclib.hooker[setkey]": 1,
+                "mclib.inject": 1,
+                "mclib.inject.Scripts": 1,
+                "mclib.inject.Styles": 1
+            }
+        }
+    },
+    "modules": {
+        "mclib": {
+            "name": "mclib",
+            "submodules": {},
+            "classes": {
+                "mclib.object": 1,
+                "mclib.Event": 1,
+                "mclib.pouch": 1,
+                "mclib.ProcessList": 1,
+                "mclib.hooker[setkey].mclib.hooker": 1,
+                "mclib.inject": 1,
+                "mclib.inject.Scripts": 1,
+                "mclib.inject.Styles": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mclib": 1,
+                "mclib.object": 1,
+                "mclib.Event": 1,
+                "mclib.pouch": 1,
+                "mclib.ProcessList": 1,
+                "mclib.hooker": 1,
+                "mclib.hooker[setkey]": 1,
+                "mclib.inject": 1,
+                "mclib.inject.Scripts": 1,
+                "mclib.inject.Styles": 1
+            },
+            "tag": "module",
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1254,
+            "description": "Container for the library"
+        }
+    },
+    "classes": {
+        "mclib.object": {
+            "name": "mclib.object",
+            "shortname": "mclib.object",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mclib",
+            "namespace": "mclib.object",
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 19,
+            "description": "Class or Namespace containing object related functions",
+            "static": 1
+        },
+        "mclib.Event": {
+            "name": "mclib.Event",
+            "shortname": "mclib.Event",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mclib",
+            "namespace": "mclib.Event",
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 479,
+            "description": "Simple generic events class.  Create an event using this class.",
+            "is_constructor": 1
+        },
+        "mclib.pouch": {
+            "name": "mclib.pouch",
+            "shortname": "mclib.pouch",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mclib",
+            "namespace": "mclib.pouch",
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 579,
+            "description": "Class or Namespace that handles pouches.  Pouches are small destroyable objects that can easily be \npassed between method calls and then destroyed once used.",
+            "static": 1
+        },
+        "mclib.ProcessList": {
+            "name": "mclib.ProcessList",
+            "shortname": "mclib.ProcessList",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mclib",
+            "namespace": "mclib.ProcessList",
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 727,
+            "description": "Creates a list of processes that will be executed asynchronously but in order.",
+            "params": [
+                {
+                    "name": "timeout",
+                    "description": "Amount of time between processing.",
+                    "type": "Float"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "mclib.hooker[setkey].mclib.hooker": {
+            "name": "mclib.hooker[setkey].mclib.hooker",
+            "shortname": "mclib.hooker",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mclib",
+            "namespace": "mclib.hooker[setkey]",
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 877,
+            "description": "Class or Namespace that handles hooks.  Hooks are like plugins.  They are an architecture that allows predescribed external pieces of   \ncode to be executed from your code.  In other words, you need to document the hooks in order for them to be used.   This is extremely useful\nif you using something like ExtJS and have a form where you want to allow a external developer using your application to create buttons \nand process button clicks from the form. \n\nHooks in their most basic form look like:\n- namespace\n  - init() returns true or false\n  - section - there can be more than one section\n    - execute() that returns a value - there can be more than one execute function.",
+            "static": 1,
+            "example": [
+                "\n      var external.hook = {\n            init: function(config) {\n                if (config.defined_by_caller) {\n                    return true;\n                }\n                else {\n                    return false;\n                }\n            }\n            section_defined_by_caller: { \n                 execute_or_defined_by_caller: function (parameters) {\n                    if (parameters.defined_by_caller) {\n                        return output_defined_by_caller;\n                    }\n                    else {\n                        return something_else_defined_by_caller_or_possibly_null_to_ignore;\n                    }\n                 }\n            }\n      }"
+            ]
+        },
+        "mclib.inject": {
+            "name": "mclib.inject",
+            "shortname": "mclib.inject",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mclib",
+            "namespace": "mclib",
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1143,
+            "description": "Class or Namespace containing injection related functions",
+            "static": 1
+        },
+        "mclib.inject.Scripts": {
+            "name": "mclib.inject.Scripts",
+            "shortname": "mclib.inject.Scripts",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mclib",
+            "namespace": "mclib.inject.Scripts",
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1160,
+            "description": "Inject a list of script tags into the document header waiting for each to load in order.",
+            "is_constructor": 1
+        },
+        "mclib.inject.Styles": {
+            "name": "mclib.inject.Styles",
+            "shortname": "mclib.inject.Styles",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mclib",
+            "namespace": "mclib.inject.Styles",
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1254,
+            "description": "Inject a list of style link tags into the document header in order.",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 35,
+            "description": "Run a procedure for every member in an object.",
+            "itemtype": "method",
+            "name": "forEach",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "The object to traverse",
+                    "type": "Object"
+                },
+                {
+                    "name": "procedure",
+                    "description": "Function to run for each member passing (value, member)",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2, c: function(a) { var b = a;}},\n        obj2 = {},\n        obj3 = mclib.object.forEach(obj1, function (value, member) {\n            obj2[member] = value;\n        });\n\n    Results: obj2 = {a:1, b:2, c: function(a) { var b = a;}}"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 56,
+            "description": "Run a procedure for every member in an object.  Don't invoke for functions.",
+            "itemtype": "method",
+            "name": "forEachWithoutFunctions",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "The object to traverse",
+                    "type": "Object"
+                },
+                {
+                    "name": "procedure",
+                    "description": "Function to run for each member passing (value, member)",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2, c: function(a) { var b = a;}},\n        obj2 = {},\n        obj3 = mclib.object.forEachWithoutFunctions(obj1, function (value, member) {\n            obj2[member] = value;\n        });\n\n    Results: obj2 = {a:1, b:2}"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 79,
+            "description": "Run a procedure for every item in an array.",
+            "itemtype": "method",
+            "name": "forArray",
+            "params": [
+                {
+                    "name": "list",
+                    "description": "The array to traverse",
+                    "type": "Array"
+                },
+                {
+                    "name": "procedure",
+                    "description": "Function to run for each item passing (value, index)",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                " \n    var array1 = [1, 2, 3],\n        array2 = [],\n        array3 = mclib.object.forArray(list1, function (value, index) {\n            array2.push(value);\n        });\n\n    Results: array2 = [1, 2, 3]"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 100,
+            "description": "Merge an object into an existing object without overwriting anything\nin the original object.",
+            "itemtype": "method",
+            "name": "merge",
+            "params": [
+                {
+                    "name": "objdest",
+                    "description": "The destination object for the merge.  If null, \n    undefined  or empty this operation will be treated as a shallow clone.",
+                    "type": "Object"
+                },
+                {
+                    "name": "objsrc",
+                    "description": "The source object for the merge.  If null or undefined\n    this operation will copy this object namespace into the destination object.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2},\n        obj2 = {b:3, c:4},\n        obj3 = mclib.object.merge(obj1, obj2);\n\n    Results: obj1 = {a:1,b:2,c:4), obj2 = {b:3, c:4}, obj3 = {a:1,b:2,c:4}\n\n        mclib.object.merge(obj1);\n\n    Results: obj1 = {a:1,b:2,c:4,merge:function...,forceMerge:function...,...}\n\n        obj3 = mclib.object.merge({},obj2);\n\n    Results: obj3 = {b:3,c:4}\n"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 144,
+            "description": "Merge an object into an existing object overwriting existing properties\nand methods in the original object.",
+            "itemtype": "method",
+            "name": "forceMerge",
+            "params": [
+                {
+                    "name": "objdest",
+                    "description": "The destination object for the merge.  If null, \n    undefined  or empty this operation will be treated as a shallow clone.",
+                    "type": "Object"
+                },
+                {
+                    "name": "objsrc",
+                    "description": "The source object for the merge.  If null or undefined\n    this operation will copy this object namespace into the destination object.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2, merge:10},\n        obj2 = {b:3, c:4},\n        obj3 = mclib.object.merge(obj1, obj2);\n\n    Results: obj1 = {a:1,b:3,c:4,merge:10), obj2 = {b:3, c:4}, obj3 = {a:1,b:3,c:4,merge:10}\n\n        mclib.object.merge(obj1);\n\n    Results: obj1 = {a:1,b:3,c:4,merge:function...,forceMerge:function...,...}\n\n        obj3 = mclib.object.merge({},obj2);\n\n    Results: obj3 = {b:3,c:4}\n"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 222,
+            "description": "Returns an array of the name of members in an item.",
+            "itemtype": "method",
+            "name": "getMemberList",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "The object whose memberss interest you.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2, c:3, merge: function...},\n        list = mclib.object.getMemberList(obj1);\n\n    Results: list = [\"a\",\"b\",\"c\",\"merge\"]\n"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 246,
+            "description": "Returns an array of the name of properties from an object.",
+            "itemtype": "method",
+            "name": "getMemberListWithoutFunctions",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "The object whose properties interest you.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2, c:3, merge: function...},\n        list = mclib.object.getMemberListWithoutFunctions(obj1);\n\n    Results: list = [\"a\",\"b\",\"c\"]\n"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 270,
+            "description": "Returns an array of the values from an object.",
+            "itemtype": "method",
+            "name": "getValueListWithoutFunctions",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "The object whose properties interest you.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2, c:3, merge: function...},\n        list = mclib.object.getValueListWithoutFunctions(obj1);\n\n    Results: list = [1,2,3]\n"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 294,
+            "description": "Returns an array of the membernames/values from an object.",
+            "itemtype": "method",
+            "name": "getMemberValueListWithoutFunctions",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "The object whose properties interest you.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2, c:3, merge: function...},\n        list = mclib.object.getMemberValueListWithoutFunctions(obj1);\n\n    Results: list = [[\"a\",1],[\"b\",2],[\"c\",3]]\n"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 318,
+            "description": "Performs a shallow compare of two objects to determine their equality.",
+            "itemtype": "method",
+            "name": "compare",
+            "params": [
+                {
+                    "name": "objA",
+                    "description": "An object to be compared.",
+                    "type": "Object"
+                },
+                {
+                    "name": "objB",
+                    "description": "An object to be compared.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2, c:3},\n\n    if (mclib.object.compare(obj1, {a:1, b:2, c:3})) {\n        // they're equal. \n    }"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 357,
+            "description": "Performs a shallow compare of two arrays to determine their equality.",
+            "itemtype": "method",
+            "name": "compareList",
+            "params": [
+                {
+                    "name": "listA",
+                    "description": "A list to be compared.",
+                    "type": "Array"
+                },
+                {
+                    "name": "listB",
+                    "description": "A list to be compared.",
+                    "type": "Array"
+                }
+            ],
+            "example": [
+                " \n    var list1 = [1, 2, 3],\n\n    if (mclib.object.compareList(list1, [1, 2, 3])) {\n        // they're equal. \n    }"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 393,
+            "description": "Performs a condition function against each item in a list and return an array of matches.",
+            "itemtype": "method",
+            "name": "matchingFromList",
+            "params": [
+                {
+                    "name": "list",
+                    "description": "A list to traverse.",
+                    "type": "Object"
+                },
+                {
+                    "name": "condition",
+                    "description": "A function to perform against each (value, index).",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var list1 = [1,2,3],\n\n    var x = mclib.object.matchingFromList(list1, function(value, index) {\n            if (value === 1 || index === 2) {\n                return true;\n            }\n            else {\n                return false;\n            }\n    })\n\n    x will equal [1,2]"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 426,
+            "description": "Performs a condition function against each member of an object and return an object of matches.",
+            "itemtype": "method",
+            "name": "filterClass",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "An object to traverse.",
+                    "type": "Object"
+                },
+                {
+                    "name": "condition",
+                    "description": "A function to perform against each (value, member).",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2, c:3},\n\n    var x = mclib.object.filterClass(obj1, function(value, member) {\n            if (value === 1 || member === \"b\") {\n                return true;\n            }\n            else {\n                return false;\n            }\n    })\n\n    x will equal {a:1,b:2}"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 494,
+            "description": "Add event handler to listen for an event.",
+            "itemtype": "method",
+            "name": "addHandler",
+            "params": [
+                {
+                    "name": "handler",
+                    "description": "A function that will be called when event is triggered.",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                "\n    var loading = new mclib.Event(),\n        handler = function (params) {\n                    alert(\"I've been handled\");\n                  };\n\n    loading.addHandler(handler);"
+            ],
+            "class": "mclib.Event",
+            "module": "mclib",
+            "namespace": "mclib.Event"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 513,
+            "description": "Remove existing event handler.",
+            "itemtype": "method",
+            "name": "removeHandler",
+            "params": [
+                {
+                    "name": "handler",
+                    "description": "A function that will be called when event is triggered.",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                "\n    var loading = new mclib.Event(),\n        handler = function (params) {\n                    alert(\"I've been handled\");\n                  };\n\n    loading.removeHandler(handler);"
+            ],
+            "class": "mclib.Event",
+            "module": "mclib",
+            "namespace": "mclib.Event"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 533,
+            "description": "Run all listening event handlers immediately.",
+            "itemtype": "method",
+            "name": "trigger",
+            "params": [
+                {
+                    "name": "argsObj",
+                    "description": "An object that contains the parameters that will be passed \n                        to the handlers.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n    var loading = new mclib.Event(),\n        handler = function (params) {\n                    alert(\"I've been handled \" + params.value );\n                  };\n\n    loading.addHandler(handler);\n    loading.trigger({value: \"whilst loading\"});"
+            ],
+            "class": "mclib.Event",
+            "module": "mclib",
+            "namespace": "mclib.Event"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 554,
+            "description": "Run all listening event handlers asynchronously.",
+            "itemtype": "method",
+            "name": "triggerAsync",
+            "params": [
+                {
+                    "name": "argsObj",
+                    "description": "An object that contains the parameters that will be passed \n                        to the handlers.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n    var loading = new mclib.Event(),\n        handler = function (params) {\n                    alert(\"I've been handled \" + params.value );\n                  };\n\n    loading.addHandler(handler);\n    loading.trigger({value: \"whilst loading\"});"
+            ],
+            "class": "mclib.Event",
+            "module": "mclib",
+            "namespace": "mclib.Event"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 596,
+            "description": "Get a pouch.",
+            "itemtype": "method",
+            "name": "get",
+            "params": [
+                {
+                    "name": "prefix",
+                    "description": "An optional prefix for the pouch. Used for id.",
+                    "type": "String"
+                }
+            ],
+            "example": [
+                "\n    var pouch = mclib.pouch.get();\n    pouch.additional = \"I've been added to the pouch\";\n\n    anotherFunction(pouch);  //passed to another function"
+            ],
+            "class": "mclib.pouch",
+            "module": "mclib",
+            "namespace": "mclib.pouch"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 616,
+            "description": "Unique id of pouch.",
+            "itemtype": "property",
+            "name": "id",
+            "type": "String",
+            "class": "mclib.pouch",
+            "module": "mclib",
+            "namespace": "mclib.pouch"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 623,
+            "description": "Full Name of pouch.  Useful if accessing via HTML.",
+            "itemtype": "property",
+            "name": "fullName",
+            "type": "String",
+            "example": [
+                "\n     var html = \"<a href='http://techn0place.blogspot.com' onclick='\" + pouch.fullName + \".linked = true;'\">Blog</a>\";"
+            ],
+            "class": "mclib.pouch",
+            "module": "mclib",
+            "namespace": "mclib.pouch"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 632,
+            "description": "Indicates if the pouch is in the process of being destroyed.",
+            "itemtype": "property",
+            "name": "destroying",
+            "type": "Boolean",
+            "class": "mclib.pouch",
+            "module": "mclib",
+            "namespace": "mclib.pouch"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 639,
+            "description": "Event that is triggered before pouch is actually destroyed.",
+            "itemtype": "event",
+            "name": "beforeDestroy",
+            "example": [
+                " \n     var pouch = mclib.pouch.get(),\n         handler = function (params) {\n                 //passed \"store\" and \"verbs\" in object\n                 if (params.pouch.value === 1) {\n                     alert(\"I haven't changed\");\n                 }\n                 params.pouch.value = 2;\n                 // pouch contents or verbs can be changed here.\n               };\n     \n     pouch.value = 1;\n\n     pouch.beforeDestroy.addHandler(handler);"
+            ],
+            "class": "mclib.pouch",
+            "module": "mclib",
+            "namespace": "mclib.pouch"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 660,
+            "description": "Destroy a pouch.",
+            "itemtype": "method",
+            "name": "destroy",
+            "params": [
+                {
+                    "name": "verbs",
+                    "description": "An object containing verb to perform and a comma seperated list\n                      of members to perform them on.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n    var pouch = mclib.pouch.get();\n    pouch.additional = \"I've been added to the pouch\";\n    pouch.window1 = window.open(\"http://techn0place.blogspot.com\");\n    pouch.window2 = window.open(\"http://techn0place.blogspot.com\");\n            \n    anotherFunction(pouch);  //passed to another function\n\n    pouch.destroy({close: \"window1,window2\"});"
+            ],
+            "class": "mclib.pouch",
+            "module": "mclib",
+            "namespace": "mclib.pouch"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 750,
+            "description": "Execute the next process in the list.",
+            "itemtype": "method",
+            "name": "_execute",
+            "access": "private",
+            "tagname": "",
+            "class": "mclib.ProcessList",
+            "module": "mclib",
+            "namespace": "mclib.ProcessList"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 791,
+            "description": "Event that is triggered when the ProcessList has emptied.",
+            "itemtype": "event",
+            "name": "listEmpty",
+            "example": [
+                " \n     var list = new mclib.ProcessList();\n     list.add(function1, argsObj);\n\n     var handler = function () {\n                 //nothing is passed\n                 alert(\"Finished processing\");\n               };\n\n    list.listEmpty.addHandler(handler);"
+            ],
+            "class": "mclib.ProcessList",
+            "module": "mclib",
+            "namespace": "mclib.ProcessList"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 808,
+            "description": "Event that is triggered at the end of each execution.",
+            "itemtype": "event",
+            "name": "progress",
+            "example": [
+                " \n     var list = new mclib.ProcessList();\n     list.add(function1,argsObj);\n\n     var handler = function (argsObj) {\n                 //nothing is passed\n                 alert(\"Processed this many \" + argsObj.processed );\n               };\n\n    list.progress.addHandler(handler);"
+            ],
+            "class": "mclib.ProcessList",
+            "module": "mclib",
+            "namespace": "mclib.ProcessList"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 825,
+            "description": "Event that is triggered when a process is invalid.",
+            "itemtype": "event",
+            "name": "invalid",
+            "example": [
+                " \n     var list = new mclib.ProcessList();\n     list.add(function1,argsObj);\n\n     var handler = function (argsObj) {\n                 //nothing is passed\n                 alert(\"Invalid process encounterd \" + argsObj.process );\n               };\n\n    list.invalid.addHandler(handler);"
+            ],
+            "class": "mclib.ProcessList",
+            "module": "mclib",
+            "namespace": "mclib.ProcessList"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 842,
+            "description": "Add a process to the process list.",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "process",
+                    "description": "A function that will be called asynchronously.",
+                    "type": "Function"
+                },
+                {
+                    "name": "argsObj",
+                    "description": "An object containing the parameters that will be passed that function.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n    var list = new mclib.ProcessList();\n    list.add(function1,argsObj);\n\n    var function1 = function (argsObj) {\n                alert(argsObj.title + \" \" + argsObj.name);\n              };\n\n   list.add(function1, {title: \"Mr\", name: \"Michael Cornetto\");"
+            ],
+            "class": "mclib.ProcessList",
+            "module": "mclib",
+            "namespace": "mclib.ProcessList"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 919,
+            "description": "Register a hook to the hooker.",
+            "itemtype": "method",
+            "name": "register",
+            "params": [
+                {
+                    "name": "setkey",
+                    "description": "The key indicating the set of hooks we are referencing (there can be more than one set).",
+                    "type": "String"
+                },
+                {
+                    "name": "hook",
+                    "description": "A reference to the hook itself.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n    var hooks = mclib.hooker.create(\"hookskeyname\",{preregister: true });\n    \n    if (mclib.hooker.register(\"hookskeyname\",external.hook)) {\n        // it registered\n    }\n"
+            ],
+            "class": "mclib.hooker",
+            "module": "mclib",
+            "namespace": "mclib.hooker"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 949,
+            "description": "Unregister a hook from the hooker.",
+            "itemtype": "method",
+            "name": "unregister",
+            "params": [
+                {
+                    "name": "setkey",
+                    "description": "The key indicating the set of hooks we are referencing (there can be more than one set).",
+                    "type": "String"
+                },
+                {
+                    "name": "hook",
+                    "description": "A reference to the hook itself.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n\n    if (mclib.hooker.unregister(\"hookskeyname\",external.hook)) {\n        // it unregistered\n    }\n"
+            ],
+            "class": "mclib.hooker",
+            "module": "mclib",
+            "namespace": "mclib.hooker"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 975,
+            "description": "Register a namespace containing hooks to the hooker.",
+            "itemtype": "method",
+            "name": "registerNamespace",
+            "params": [
+                {
+                    "name": "setkey",
+                    "description": "The key indicating the set of hooks we are referencing (there can be more than one set).",
+                    "type": "String"
+                },
+                {
+                    "name": "hook",
+                    "description": "A reference to the hook itself.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n    var hooks = mclib.hooker.create(\"hookskeyname\",{preregister: false });\n    \n    var countregistered = mclib.hooker.registerNamespace(\"hookskeyname\",external);\n"
+            ],
+            "class": "mclib.hooker",
+            "module": "mclib",
+            "namespace": "mclib.hooker"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 999,
+            "description": "Execute a set of hooks then returns an array of non-empty results.",
+            "itemtype": "method",
+            "name": "execute",
+            "params": [
+                {
+                    "name": "setkey",
+                    "description": "The key indicating the set of hooks we are referencing (there can be more than one set).",
+                    "type": "String"
+                },
+                {
+                    "name": "sectionname",
+                    "description": "The name of the section where the hook function is located.",
+                    "type": "String"
+                },
+                {
+                    "name": "parameters",
+                    "description": "Optional object containing caller defined parameters for the hook function. Defaults to empty object.",
+                    "type": "Object"
+                },
+                {
+                    "name": "functionname",
+                    "description": "Optional string containing the hook function name to call. Defaults to execute.",
+                    "type": "String"
+                }
+            ],
+            "example": [
+                "\n    var resultsArray = mclib.hooker.execute(\"hookskeyname\",\"hookssection\",{caller: \"xxx\", defined: \"yyy\", parameters: \"zzz\"},\"hooksfunction\");\n    \n    mclib.object.forArray(resultsArray, function (value, index) {\n        //do something with the results.\n        //And you may want to test them for validity\n        //because they are provided externally. \n    });"
+            ],
+            "class": "mclib.hooker",
+            "module": "mclib",
+            "namespace": "mclib.hooker"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1041,
+            "description": "Create a hook set (there can be more than one). It will create a namespace based on the setkey.",
+            "itemtype": "method",
+            "name": "create",
+            "params": [
+                {
+                    "name": "setkey",
+                    "description": "The unique key indicating the set of hooks we are referencing (there can be more than one set).",
+                    "type": "String"
+                },
+                {
+                    "name": "initconfig",
+                    "description": "Optional object containing caller defined initialisation parameters for the hook. Defaults to empty object. \n                \n                Passing a config parameter named \"preregister\" will allow you to turn off on the fly registration\n                for the hook maker.  If preregister = true, you will define a namespace the user can place their hooks then register that \n                namespace onload.  If preregister = false, special functions will be supplied that allow the user to register their hook\n                at any time they like.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n    var hooks = mclib.hooker.create(\"hookskeyname\",{preregister: false, caller: \"xxx\", defined: \"yyy\", parameters: \"zzz\" });\n    mclib.hooker.hookskeyname.register(...);// is valid\n\n    var hookspreregister = mclib.hooker.create(\"hookskeyname\",{preregister: true, caller: \"xxx\", defined: \"yyy\", parameters: \"zzz\" });\n    mclib.hooker.hookskeyname.register(...);// is not valid\n"
+            ],
+            "class": "mclib.hooker",
+            "module": "mclib",
+            "namespace": "mclib.hooker"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1073,
+            "description": "Initial config passed to create.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "String",
+            "class": "mclib.hooker[setkey].mclib.hooker",
+            "module": "mclib",
+            "namespace": "mclib.hooker[setkey]"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1081,
+            "description": "Array of hooks considered active.",
+            "itemtype": "property",
+            "name": "activehooks",
+            "type": "Array",
+            "class": "mclib.hooker[setkey].mclib.hooker",
+            "module": "mclib",
+            "namespace": "mclib.hooker[setkey]"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1094,
+            "description": "Register a hook to the hooker.  Only available if set was created with preregister=false.",
+            "itemtype": "method",
+            "name": "register",
+            "params": [
+                {
+                    "name": "hook",
+                    "description": "A reference to the hook itself.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n        \n    if (mclib.hooker.hookskeyname.register(my.external.hook)) {\n        // it registered\n    }\n"
+            ],
+            "class": "mclib.hooker[setkey].mclib.hooker",
+            "module": "mclib",
+            "namespace": "mclib.hooker[setkey]"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1110,
+            "description": "Unregister a hook to the hooker.  Only available if set was created with preregister=false.",
+            "itemtype": "method",
+            "name": "unregister",
+            "params": [
+                {
+                    "name": "hook",
+                    "description": "A reference to the hook itself.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n        \n    if (mclib.hooker.hookskeyname.unregister(my.external.hook)) {\n        // it unregistered\n    }\n"
+            ],
+            "class": "mclib.hooker[setkey].mclib.hooker",
+            "module": "mclib",
+            "namespace": "mclib.hooker[setkey]"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1170,
+            "description": "Event that is triggered when injection is complete.",
+            "itemtype": "event",
+            "name": "injectEnd",
+            "example": [
+                " \n     injection.inject();\n       \n     var handler = function () {\n                 //nothing is passed\n                 alert(\"Finished injecting\");\n               };\n       \n    injection.injectEnd.addHandler(handler);"
+            ],
+            "class": "mclib.inject.Scripts",
+            "module": "mclib",
+            "namespace": "mclib.inject.Scripts"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1187,
+            "description": "Add script to the list of scripts that will be injected.",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "An arbitrary keyname to identify the script tag.",
+                    "type": "String"
+                },
+                {
+                    "name": "url",
+                    "description": "The url of the script file.",
+                    "type": "Object"
+                },
+                {
+                    "name": "condition",
+                    "description": "A boolean function that indicates if script is already loaded.",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                "\n    var injection = new mclib.inject.Scripts();\n    injection.add(\"somescript\", \"http://www.mydomain.com/myscript.js\", function () {\n                if (!myscriptvar) return false;\n                return true;\n    });"
+            ],
+            "class": "mclib.inject.Scripts",
+            "module": "mclib",
+            "namespace": "mclib.inject.Scripts"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1209,
+            "description": "Inject each script in the list in order, waiting for each to be loaded.",
+            "itemtype": "method",
+            "name": "inject",
+            "example": [
+                "\n    injection.inject()"
+            ],
+            "class": "mclib.inject.Scripts",
+            "module": "mclib",
+            "namespace": "mclib.inject.Scripts"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1264,
+            "description": "Event that is triggered when injection is complete.",
+            "itemtype": "event",
+            "name": "injectEnd",
+            "example": [
+                " \n     injection.inject();\n       \n     var handler = function () {\n                 //nothing is passed\n                 alert(\"Finished injecting\");\n               };\n       \n    injection.injectEnd.addHandler(handler);"
+            ],
+            "class": "mclib.inject.Styles",
+            "module": "mclib",
+            "namespace": "mclib.inject.Styles"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1281,
+            "description": "Add style link to the list of style links that will be injected.",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "An arbitrary keyname to identify the style link tag.",
+                    "type": "String"
+                },
+                {
+                    "name": "url",
+                    "description": "The url of the style file.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n    var injection = new mclib.inject.Styles();\n    injection.add(\"somestyle\", \"http://www.mydomain.com/mystyle.css\");"
+            ],
+            "class": "mclib.inject.Styles",
+            "module": "mclib",
+            "namespace": "mclib.inject.Styles"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "line": 1299,
+            "description": "Inject each style link in the list in order.",
+            "itemtype": "method",
+            "name": "inject",
+            "example": [
+                "\n    injection.inject()"
+            ],
+            "class": "mclib.inject.Styles",
+            "module": "mclib",
+            "namespace": "mclib.inject.Styles"
+        }
+    ],
+    "warnings": []
+}
