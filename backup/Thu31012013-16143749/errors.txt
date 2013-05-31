@@ -1,3 +1,0 @@
-mclib.js: line 505, col 17, 'setTimeout' is not defined.
-
-1 error
