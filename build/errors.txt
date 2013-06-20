@@ -1,4 +1,6 @@
-mclib.js: line 817, col 17, 'setTimeout' is not defined.
+mclib.js: line 133, col 22, Possible strict violation.
+mclib.js: line 177, col 22, Possible strict violation.
+mclib.js: line 821, col 17, 'setTimeout' is not defined.
 mclib.js: line 906, col 21, 'setTimeout' is not defined.
 mclib.js: line 1263, col 35, 'document' is not defined.
 mclib.js: line 1268, col 38, 'document' is not defined.
@@ -7,4 +9,4 @@ mclib.js: line 1353, col 35, 'document' is not defined.
 mclib.js: line 1359, col 38, 'document' is not defined.
 mclib.js: line 1359, col 87, 'document' is not defined.
 
-8 errors
+10 errors
