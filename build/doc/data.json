@@ -2,12 +2,12 @@
     "project": {
         "name": "MC Library",
         "description": "A small library of useful functions",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "url": "http://techn0place.blogspot.com/"
     },
     "files": {
-        "D:\\Projects\\Programming\\mclib\\mclib.js": {
-            "name": "D:\\Projects\\Programming\\mclib\\mclib.js",
+        "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js": {
+            "name": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
             "modules": {
                 "mclib": 1
             },
@@ -64,8 +64,8 @@
                 "mclib.inject.Styles": 1
             },
             "tag": "module",
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1254,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1291,
             "description": "Container for the library"
         }
     },
@@ -80,7 +80,7 @@
             "extension_for": [],
             "module": "mclib",
             "namespace": "mclib.object",
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
             "line": 19,
             "description": "Class or Namespace containing object related functions",
             "static": 1
@@ -95,8 +95,8 @@
             "extension_for": [],
             "module": "mclib",
             "namespace": "mclib.Event",
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 479,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 516,
             "description": "Simple generic events class.  Create an event using this class.",
             "is_constructor": 1
         },
@@ -110,8 +110,8 @@
             "extension_for": [],
             "module": "mclib",
             "namespace": "mclib.pouch",
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 579,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 616,
             "description": "Class or Namespace that handles pouches.  Pouches are small destroyable objects that can easily be \npassed between method calls and then destroyed once used.",
             "static": 1
         },
@@ -125,8 +125,8 @@
             "extension_for": [],
             "module": "mclib",
             "namespace": "mclib.ProcessList",
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 727,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 764,
             "description": "Creates a list of processes that will be executed asynchronously but in order.",
             "params": [
                 {
@@ -147,8 +147,8 @@
             "extension_for": [],
             "module": "mclib",
             "namespace": "mclib.hooker[setkey]",
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 877,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 914,
             "description": "Class or Namespace that handles hooks.  Hooks are like plugins.  They are an architecture that allows predescribed external pieces of   \ncode to be executed from your code.  In other words, you need to document the hooks in order for them to be used.   This is extremely useful\nif you using something like ExtJS and have a form where you want to allow a external developer using your application to create buttons \nand process button clicks from the form. \n\nHooks in their most basic form look like:\n- namespace\n  - init() returns true or false\n  - section - there can be more than one section\n    - execute() that returns a value - there can be more than one execute function.",
             "static": 1,
             "example": [
@@ -165,8 +165,8 @@
             "extension_for": [],
             "module": "mclib",
             "namespace": "mclib",
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1143,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1180,
             "description": "Class or Namespace containing injection related functions",
             "static": 1
         },
@@ -180,8 +180,8 @@
             "extension_for": [],
             "module": "mclib",
             "namespace": "mclib.inject.Scripts",
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1160,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1197,
             "description": "Inject a list of script tags into the document header waiting for each to load in order.",
             "is_constructor": 1
         },
@@ -195,15 +195,15 @@
             "extension_for": [],
             "module": "mclib",
             "namespace": "mclib.inject.Styles",
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1254,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1291,
             "description": "Inject a list of style link tags into the document header in order.",
             "is_constructor": 1
         }
     },
     "classitems": [
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
             "line": 35,
             "description": "Run a procedure for every member in an object.",
             "itemtype": "method",
@@ -228,7 +228,7 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
             "line": 56,
             "description": "Run a procedure for every member in an object.  Don't invoke for functions.",
             "itemtype": "method",
@@ -253,7 +253,7 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
             "line": 79,
             "description": "Run a procedure for every item in an array.",
             "itemtype": "method",
@@ -278,7 +278,7 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
             "line": 100,
             "description": "Merge an object into an existing object without overwriting anything\nin the original object.",
             "itemtype": "method",
@@ -303,7 +303,7 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
             "line": 144,
             "description": "Merge an object into an existing object overwriting existing properties\nand methods in the original object.",
             "itemtype": "method",
@@ -328,8 +328,48 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 222,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 186,
+            "description": "Clones an object which is the equivalent of a deep copy.  Nested objects\nand arrays are cloned so references are different.",
+            "itemtype": "method",
+            "name": "clone",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "The object to be cloned.",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " \n    var obj1 = {a:1, b:2},\n        obj2 = {c:3, obj: obj1},\n        obj3 = mclib.object.clone(obj2);\n\n        obj3.obj.a += 1;\n\n    Results: obj1 = {a:1,b:2}, obj2 = {c:3, obj; {a:1,b:2}}, obj3 = {c:3, obj: {a:2,b:2}}\n"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 223,
+            "description": "Clones an array which is the equivalent of a deep copy.  Nested objects\nand arrays are cloned so references are different.",
+            "itemtype": "method",
+            "name": "cloneArray",
+            "params": [
+                {
+                    "name": "list",
+                    "description": "The array to be cloned.",
+                    "type": "Array"
+                }
+            ],
+            "example": [
+                " \n    var list1 = [1, 2],\n        list2 = [3, list1],\n        list3 = mclib.object.cloneArray(list2);\n\n        list3[1][0] += 1;\n\n    Results: list1 = [1, 2], list2 = [3, [1, 2]], list3 = [3, [2, 2]]\n"
+            ],
+            "class": "mclib.object",
+            "module": "mclib",
+            "namespace": "mclib.object"
+        },
+        {
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 258,
             "description": "Returns an array of the name of members in an item.",
             "itemtype": "method",
             "name": "getMemberList",
@@ -348,8 +388,8 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 246,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 282,
             "description": "Returns an array of the name of properties from an object.",
             "itemtype": "method",
             "name": "getMemberListWithoutFunctions",
@@ -368,8 +408,8 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 270,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 306,
             "description": "Returns an array of the values from an object.",
             "itemtype": "method",
             "name": "getValueListWithoutFunctions",
@@ -388,8 +428,8 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 294,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 330,
             "description": "Returns an array of the membernames/values from an object.",
             "itemtype": "method",
             "name": "getMemberValueListWithoutFunctions",
@@ -408,8 +448,8 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 318,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 354,
             "description": "Performs a shallow compare of two objects to determine their equality.",
             "itemtype": "method",
             "name": "compare",
@@ -433,8 +473,8 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 357,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 393,
             "description": "Performs a shallow compare of two arrays to determine their equality.",
             "itemtype": "method",
             "name": "compareList",
@@ -458,8 +498,8 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 393,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 429,
             "description": "Performs a condition function against each item in a list and return an array of matches.",
             "itemtype": "method",
             "name": "matchingFromList",
@@ -483,8 +523,8 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 426,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 462,
             "description": "Performs a condition function against each member of an object and return an object of matches.",
             "itemtype": "method",
             "name": "filterClass",
@@ -508,8 +548,8 @@
             "namespace": "mclib.object"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 494,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 531,
             "description": "Add event handler to listen for an event.",
             "itemtype": "method",
             "name": "addHandler",
@@ -528,8 +568,8 @@
             "namespace": "mclib.Event"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 513,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 550,
             "description": "Remove existing event handler.",
             "itemtype": "method",
             "name": "removeHandler",
@@ -548,8 +588,8 @@
             "namespace": "mclib.Event"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 533,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 570,
             "description": "Run all listening event handlers immediately.",
             "itemtype": "method",
             "name": "trigger",
@@ -568,8 +608,8 @@
             "namespace": "mclib.Event"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 554,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 591,
             "description": "Run all listening event handlers asynchronously.",
             "itemtype": "method",
             "name": "triggerAsync",
@@ -588,8 +628,8 @@
             "namespace": "mclib.Event"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 596,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 633,
             "description": "Get a pouch.",
             "itemtype": "method",
             "name": "get",
@@ -608,8 +648,8 @@
             "namespace": "mclib.pouch"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 616,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 653,
             "description": "Unique id of pouch.",
             "itemtype": "property",
             "name": "id",
@@ -619,8 +659,8 @@
             "namespace": "mclib.pouch"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 623,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 660,
             "description": "Full Name of pouch.  Useful if accessing via HTML.",
             "itemtype": "property",
             "name": "fullName",
@@ -633,8 +673,8 @@
             "namespace": "mclib.pouch"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 632,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 669,
             "description": "Indicates if the pouch is in the process of being destroyed.",
             "itemtype": "property",
             "name": "destroying",
@@ -644,8 +684,8 @@
             "namespace": "mclib.pouch"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 639,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 676,
             "description": "Event that is triggered before pouch is actually destroyed.",
             "itemtype": "event",
             "name": "beforeDestroy",
@@ -657,8 +697,8 @@
             "namespace": "mclib.pouch"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 660,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 697,
             "description": "Destroy a pouch.",
             "itemtype": "method",
             "name": "destroy",
@@ -677,8 +717,8 @@
             "namespace": "mclib.pouch"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 750,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 783,
             "description": "Execute the next process in the list.",
             "itemtype": "method",
             "name": "_execute",
@@ -689,8 +729,8 @@
             "namespace": "mclib.ProcessList"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 791,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 828,
             "description": "Event that is triggered when the ProcessList has emptied.",
             "itemtype": "event",
             "name": "listEmpty",
@@ -702,8 +742,8 @@
             "namespace": "mclib.ProcessList"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 808,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 845,
             "description": "Event that is triggered at the end of each execution.",
             "itemtype": "event",
             "name": "progress",
@@ -715,8 +755,8 @@
             "namespace": "mclib.ProcessList"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 825,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 862,
             "description": "Event that is triggered when a process is invalid.",
             "itemtype": "event",
             "name": "invalid",
@@ -728,8 +768,8 @@
             "namespace": "mclib.ProcessList"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 842,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 879,
             "description": "Add a process to the process list.",
             "itemtype": "method",
             "name": "add",
@@ -753,8 +793,8 @@
             "namespace": "mclib.ProcessList"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 919,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 956,
             "description": "Register a hook to the hooker.",
             "itemtype": "method",
             "name": "register",
@@ -778,8 +818,8 @@
             "namespace": "mclib.hooker"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 949,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 986,
             "description": "Unregister a hook from the hooker.",
             "itemtype": "method",
             "name": "unregister",
@@ -803,8 +843,8 @@
             "namespace": "mclib.hooker"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 975,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1012,
             "description": "Register a namespace containing hooks to the hooker.",
             "itemtype": "method",
             "name": "registerNamespace",
@@ -828,8 +868,8 @@
             "namespace": "mclib.hooker"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 999,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1036,
             "description": "Execute a set of hooks then returns an array of non-empty results.",
             "itemtype": "method",
             "name": "execute",
@@ -863,8 +903,8 @@
             "namespace": "mclib.hooker"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1041,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1078,
             "description": "Create a hook set (there can be more than one). It will create a namespace based on the setkey.",
             "itemtype": "method",
             "name": "create",
@@ -888,8 +928,8 @@
             "namespace": "mclib.hooker"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1073,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1110,
             "description": "Initial config passed to create.",
             "itemtype": "property",
             "name": "config",
@@ -899,8 +939,8 @@
             "namespace": "mclib.hooker[setkey]"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1081,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1118,
             "description": "Array of hooks considered active.",
             "itemtype": "property",
             "name": "activehooks",
@@ -910,8 +950,8 @@
             "namespace": "mclib.hooker[setkey]"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1094,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1131,
             "description": "Register a hook to the hooker.  Only available if set was created with preregister=false.",
             "itemtype": "method",
             "name": "register",
@@ -930,8 +970,8 @@
             "namespace": "mclib.hooker[setkey]"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1110,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1147,
             "description": "Unregister a hook to the hooker.  Only available if set was created with preregister=false.",
             "itemtype": "method",
             "name": "unregister",
@@ -950,8 +990,8 @@
             "namespace": "mclib.hooker[setkey]"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1170,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1207,
             "description": "Event that is triggered when injection is complete.",
             "itemtype": "event",
             "name": "injectEnd",
@@ -963,8 +1003,8 @@
             "namespace": "mclib.inject.Scripts"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1187,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1224,
             "description": "Add script to the list of scripts that will be injected.",
             "itemtype": "method",
             "name": "add",
@@ -993,8 +1033,8 @@
             "namespace": "mclib.inject.Scripts"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1209,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1246,
             "description": "Inject each script in the list in order, waiting for each to be loaded.",
             "itemtype": "method",
             "name": "inject",
@@ -1006,8 +1046,8 @@
             "namespace": "mclib.inject.Scripts"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1264,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1301,
             "description": "Event that is triggered when injection is complete.",
             "itemtype": "event",
             "name": "injectEnd",
@@ -1019,8 +1059,8 @@
             "namespace": "mclib.inject.Styles"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1281,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1318,
             "description": "Add style link to the list of style links that will be injected.",
             "itemtype": "method",
             "name": "add",
@@ -1044,8 +1084,8 @@
             "namespace": "mclib.inject.Styles"
         },
         {
-            "file": "D:\\Projects\\Programming\\mclib\\mclib.js",
-            "line": 1299,
+            "file": "D:\\Projects\\Programming\\OpenSource\\mclib\\mclib.js",
+            "line": 1336,
             "description": "Inject each style link in the list in order.",
             "itemtype": "method",
             "name": "inject",

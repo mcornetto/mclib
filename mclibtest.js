@@ -167,6 +167,36 @@ mclib.test.add("testMatching", "Test object.(matchingFromList, filterClass)", fu
     }
 });
 
+mclib.test.add("testCloning", "Test object.(clone, cloneArray)", function () {
+    this.beginTest(this.caption);
+
+    var failed = true,
+        obj1 = { a: 1, b: 2, c: [1, 2, 3]},
+        list1 = [1, 2, 3, obj1],
+        obj2 = this.clone(obj1),
+        list2 = this.clone(list1);
+
+    obj2.a += 2;
+    obj2.c[0]++;
+    list2[0]++;
+    list2[3].a++;
+
+    if ((obj1.a === 1)
+        && (obj2.a === 3)
+        && (obj1.c[0] === 1)
+        && (obj2.c[0] === 2)
+        && (list1[0] === 1)
+        && (list2[0] === 2)
+        && (list1[3].a === 1)
+        && (list2[3].a === 2)) {
+        this.testSucceeded();
+    }
+    else {
+        this.testFailed();
+    }
+
+});
+
 mclib.test.add("testEvent", "Test Event", function () {
 
     this.beginTest(this.caption);

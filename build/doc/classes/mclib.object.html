@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.0</em>
+            <em>API Docs for: 0.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -106,7 +106,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l19"><code>D:\Projects\Programming\mclib\mclib.js:19</code></a>
+            Defined in: <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l19"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:19</code></a>
         </div>
     
 
@@ -148,6 +148,20 @@
                     <h3>Methods</h3>
 
                     <ul class="index-list methods">
+                        
+                            <li class="index-item method">
+                                <a href="#method_clone">clone</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_cloneArray">cloneArray</a>
+
+                                
+                                
+                            </li>
                         
                             <li class="index-item method">
                                 <a href="#method_compare">compare</a>
@@ -256,6 +270,212 @@
                 <h2 class="off-left">Methods</h2>
 
                 
+                    <div id="method_clone" class="method item">
+    <h3 class="name"><code>clone</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>obj</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l186"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:186</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Clones an object which is the equivalent of a deep copy.  Nested objects
+and arrays are cloned so references are different.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">obj</code>
+                        <span class="type">Object</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The object to be cloned.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>var obj1 = {a:1, b:2},
+    obj2 = {c:3, obj: obj1},
+    obj3 = mclib.object.clone(obj2);
+
+    obj3.obj.a += 1;
+
+Results: obj1 = {a:1,b:2}, obj2 = {c:3, obj; {a:1,b:2}}, obj3 = {c:3, obj: {a:2,b:2}}
+</code></pre>
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_cloneArray" class="method item">
+    <h3 class="name"><code>cloneArray</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>list</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l223"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:223</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Clones an array which is the equivalent of a deep copy.  Nested objects
+and arrays are cloned so references are different.</p>
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">list</code>
+                        <span class="type">Array</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The array to be cloned.</p>
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>var list1 = [1, 2],
+    list2 = [3, list1],
+    list3 = mclib.object.cloneArray(list2);
+
+    list3[1][0] += 1;
+
+Results: list1 = [1, 2], list2 = [3, [1, 2]], list3 = [3, [2, 2]]
+</code></pre>
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_compare" class="method item">
     <h3 class="name"><code>compare</code></h3>
 
@@ -304,7 +524,7 @@
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l318"><code>D:\Projects\Programming\mclib\mclib.js:318</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l354"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:354</code></a>
         
         </p>
 
@@ -425,7 +645,7 @@ if (mclib.object.compare(obj1, {a:1, b:2, c:3})) {
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l357"><code>D:\Projects\Programming\mclib\mclib.js:357</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l393"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:393</code></a>
         
         </p>
 
@@ -546,7 +766,7 @@ if (mclib.object.compareList(list1, [1, 2, 3])) {
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l426"><code>D:\Projects\Programming\mclib\mclib.js:426</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l462"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:462</code></a>
         
         </p>
 
@@ -674,7 +894,7 @@ x will equal {a:1,b:2}
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l79"><code>D:\Projects\Programming\mclib\mclib.js:79</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l79"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:79</code></a>
         
         </p>
 
@@ -797,7 +1017,7 @@ Results: array2 = [1, 2, 3]
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l144"><code>D:\Projects\Programming\mclib\mclib.js:144</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l144"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:144</code></a>
         
         </p>
 
@@ -929,7 +1149,7 @@ Results: obj3 = {b:3,c:4}
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l35"><code>D:\Projects\Programming\mclib\mclib.js:35</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l35"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:35</code></a>
         
         </p>
 
@@ -1052,7 +1272,7 @@ Results: obj2 = {a:1, b:2, c: function(a) { var b = a;}}
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l56"><code>D:\Projects\Programming\mclib\mclib.js:56</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l56"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:56</code></a>
         
         </p>
 
@@ -1169,7 +1389,7 @@ Results: obj2 = {a:1, b:2}
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l222"><code>D:\Projects\Programming\mclib\mclib.js:222</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l258"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:258</code></a>
         
         </p>
 
@@ -1268,7 +1488,7 @@ Results: list = ["a","b","c","merge"]
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l246"><code>D:\Projects\Programming\mclib\mclib.js:246</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l282"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:282</code></a>
         
         </p>
 
@@ -1367,7 +1587,7 @@ Results: list = ["a","b","c"]
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l294"><code>D:\Projects\Programming\mclib\mclib.js:294</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l330"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:330</code></a>
         
         </p>
 
@@ -1466,7 +1686,7 @@ Results: list = [["a",1],["b",2],["c",3]]
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l270"><code>D:\Projects\Programming\mclib\mclib.js:270</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l306"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:306</code></a>
         
         </p>
 
@@ -1571,7 +1791,7 @@ Results: list = [1,2,3]
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l393"><code>D:\Projects\Programming\mclib\mclib.js:393</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l429"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:429</code></a>
         
         </p>
 
@@ -1699,7 +1919,7 @@ x will equal [1,2]
             
         
         
-        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_mclib_mclib.js.html#l100"><code>D:\Projects\Programming\mclib\mclib.js:100</code></a>
+        <a href="..&#x2F;files&#x2F;D:_Projects_Programming_OpenSource_mclib_mclib.js.html#l100"><code>D:\Projects\Programming\OpenSource\mclib\mclib.js:100</code></a>
         
         </p>
 

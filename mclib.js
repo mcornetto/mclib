@@ -26,12 +26,12 @@ var mclib = {};
 mclib.object = (function () {
     "use strict";
 
-    function _isFunction(item) {
+    var _isFunction = function (item) {
         if (typeof (item) === "function") {
             return true;
         }
         return false;
-    }
+    },
     /**
         Run a procedure for every member in an object.
 
@@ -48,11 +48,11 @@ mclib.object = (function () {
 
             Results: obj2 = {a:1, b:2, c: function(a) { var b = a;}}
     **/
-    function _forEach(obj, procedure) {
+    _forEach = function (obj, procedure) {
         for (var member in obj) {
             procedure(obj[member], member);
         }
-    }
+    },
     /**
         Run a procedure for every member in an object.  Don't invoke for functions.
 
@@ -69,13 +69,13 @@ mclib.object = (function () {
 
             Results: obj2 = {a:1, b:2}
     **/
-    function _forEachWithoutFunctions(obj, procedure) {
+    _forEachWithoutFunctions = function (obj, procedure) {
         for (var member in obj) {
             if (!_isFunction(obj[member])) {
                 procedure(obj[member], member);
             }
         }
-    }
+    },
     /**
         Run a procedure for every item in an array. 
 
@@ -92,11 +92,11 @@ mclib.object = (function () {
 
             Results: array2 = [1, 2, 3]
     **/
-    function _forArray(list, procedure) {
+    _forArray = function (list, procedure) {
         for (var i = 0, l = list.length; i < l; i++) {
             procedure(list[i], i);
         }
-    }
+    },
     /**
         Merge an object into an existing object without overwriting anything
         in the original object.
@@ -123,7 +123,7 @@ mclib.object = (function () {
             Results: obj3 = {b:3,c:4}
 
     **/
-    function _merge(objdest, objsrc) {
+    _merge = function (objdest, objsrc) {
 
         if (!objdest) {
             objdest = {};
@@ -140,7 +140,7 @@ mclib.object = (function () {
         });
 
         return objdest;
-    }
+    },
     /**
         Merge an object into an existing object overwriting existing properties
         and methods in the original object.
@@ -167,7 +167,7 @@ mclib.object = (function () {
             Results: obj3 = {b:3,c:4}
 
     **/
-    function _forceMerge(objdest, objsrc) {
+    _forceMerge = function (objdest, objsrc) {
 
         if (!objdest) {
             objdest = {};
@@ -182,8 +182,26 @@ mclib.object = (function () {
         });
 
         return objdest;
-    }
-    function _clone(obj) {
+    },
+    /**
+        Clones an object which is the equivalent of a deep copy.  Nested objects
+        and arrays are cloned so references are different.  
+
+        @method clone
+        @namespace mclib.object
+        @param {object} obj The object to be cloned. 
+        @example 
+            var obj1 = {a:1, b:2},
+                obj2 = {c:3, obj: obj1},
+                obj3 = mclib.object.clone(obj2);
+
+                obj3.obj.a += 1;
+
+            Results: obj1 = {a:1,b:2}, obj2 = {c:3, obj; {a:1,b:2}}, obj3 = {c:3, obj: {a:2,b:2}}
+
+    **/
+    _clone = function (obj) {
+        //TODO: This needs a depth specified to avoid endless loops of objects that reference themselves
         var objdest = {};
         _forEach(obj, function (value, member) {
             if (typeof (value) !== "object") {
@@ -191,7 +209,7 @@ mclib.object = (function () {
                 objdest[member] = value;
             }
             else {
-                
+
                 if (value instanceof Array) {
                     objdest[member] = _cloneArray(value);
                 }
@@ -199,10 +217,28 @@ mclib.object = (function () {
                     objdest[member] = _clone(value);
                 }
             }
-        })
+        });
         return objdest;
-    }
-    function _cloneArray(list) {
+    },
+    /**
+        Clones an array which is the equivalent of a deep copy.  Nested objects
+        and arrays are cloned so references are different.  
+
+        @method cloneArray
+        @namespace mclib.object
+        @param {array} list The array to be cloned. 
+        @example 
+            var list1 = [1, 2],
+                list2 = [3, list1],
+                list3 = mclib.object.cloneArray(list2);
+
+                list3[1][0] += 1;
+
+            Results: list1 = [1, 2], list2 = [3, [1, 2]], list3 = [3, [2, 2]]
+
+    **/
+    _cloneArray = function (list) {
+        //TODO: This needs a depth specified to avoid endless loops of arrays that reference themselves
         var listdest = [];
         _forArray(list, function (item, index) {
             if (typeof (item) !== "object") {
@@ -218,7 +254,7 @@ mclib.object = (function () {
             }
         });
         return listdest;
-    }
+    },
     /**
         Returns an array of the name of members in an item.
 
@@ -232,7 +268,7 @@ mclib.object = (function () {
             Results: list = ["a","b","c","merge"]
 
     **/
-    function _getMemberList(obj) {
+    _getMemberList = function (obj) {
 
         var returnArray = [];
 
@@ -242,7 +278,7 @@ mclib.object = (function () {
         });
 
         return returnArray;
-    }
+    },
     /**
         Returns an array of the name of properties from an object.
 
@@ -256,7 +292,7 @@ mclib.object = (function () {
             Results: list = ["a","b","c"]
 
     **/
-    function _getMemberListWithoutFunctions(obj) {
+    _getMemberListWithoutFunctions = function (obj) {
 
         var returnArray = [];
 
@@ -266,7 +302,7 @@ mclib.object = (function () {
         });
 
         return returnArray;
-    }
+    },
     /**
         Returns an array of the values from an object.
 
@@ -280,7 +316,7 @@ mclib.object = (function () {
             Results: list = [1,2,3]
 
     **/
-    function _getValueListWithoutFunctions(obj) {
+    _getValueListWithoutFunctions = function (obj) {
 
         var returnArray = [];
 
@@ -290,7 +326,7 @@ mclib.object = (function () {
         });
 
         return returnArray;
-    }
+    },
     /**
         Returns an array of the membernames/values from an object.
 
@@ -304,7 +340,7 @@ mclib.object = (function () {
             Results: list = [["a",1],["b",2],["c",3]]
 
     **/
-    function _getMemberValueListWithoutFunctions(obj) {
+    _getMemberValueListWithoutFunctions = function (obj) {
 
         var returnArray = [];
 
@@ -314,7 +350,7 @@ mclib.object = (function () {
         });
 
         return returnArray;
-    }
+    },
     /**
         Performs a shallow compare of two objects to determine their equality.
 
@@ -329,7 +365,7 @@ mclib.object = (function () {
                 // they're equal. 
             }
     **/
-    function _compare(objA, objB) {
+    _compare = function (objA, objB) {
 
         if (objA !== objB) {
 
@@ -353,7 +389,7 @@ mclib.object = (function () {
         }
 
         return true;
-    }
+    },
     /**
         Performs a shallow compare of two arrays to determine their equality.
 
@@ -368,7 +404,7 @@ mclib.object = (function () {
                 // they're equal. 
             }
     **/
-    function _compareList(listA, listB) {
+    _compareList = function (listA, listB) {
 
         if (listA !== listB) {
 
@@ -389,7 +425,7 @@ mclib.object = (function () {
         }
 
         return true;
-    }
+    },
     /**
         Performs a condition function against each item in a list and return an array of matches.
 
@@ -411,7 +447,7 @@ mclib.object = (function () {
 
             x will equal [1,2]
     **/
-    function _matchingFromList(list, condition) {
+    _matchingFromList = function (list, condition) {
 
         var returnList = [];
 
@@ -422,7 +458,7 @@ mclib.object = (function () {
         });
 
         return returnList;
-    }
+    },
     /**
         Performs a condition function against each member of an object and return an object of matches.
 
@@ -444,7 +480,7 @@ mclib.object = (function () {
 
             x will equal {a:1,b:2}
     **/
-    function _filterClass(obj, condition) {
+    _filterClass = function (obj, condition) {
 
         var returnClass = {};
 
@@ -455,7 +491,7 @@ mclib.object = (function () {
         });
 
         return returnClass;
-    }
+    };
 
     return {
 
@@ -465,6 +501,7 @@ mclib.object = (function () {
         merge: _merge,
         forceMerge: _forceMerge,
         clone: _clone,
+        cloneArray: _cloneArray,
         getMemberListWithoutFunctions: _getMemberListWithoutFunctions,
         getValueListWithoutFunctions: _getValueListWithoutFunctions,
         getMemberValueListWithoutFunctions: _getMemberValueListWithoutFunctions,
@@ -568,11 +605,11 @@ mclib.Event = function () {
                 loading.trigger({value: "whilst loading"});
         **/
         triggerAsync: function (argsObj) {
-        var list = new mclib.ProcessList();
-        _obj.forArray(_handlers, function (value, index) {
-            list.add(value, argsObj);
-        });
-    }
+            var list = new mclib.ProcessList();
+            _obj.forArray(_handlers, function (value, index) {
+                list.add(value, argsObj);
+            });
+        }
 
     };
 };
@@ -741,11 +778,7 @@ mclib.ProcessList = function (timeout) {
         _processed = 0,
         _progress = new mclib.Event(),
         _invalid = new mclib.Event(),
-        _listEmpty = new mclib.Event();
-
-    if (!timeout) {
-        timeout = 1;
-    }
+        _listEmpty = new mclib.Event(),
 
     /**
         Execute the next process in the list.  
@@ -754,7 +787,7 @@ mclib.ProcessList = function (timeout) {
         @private
         @namespace mclib.ProcessList
     **/
-    function _execute() {
+    _execute = function () {
 
         if (_list.length > 0) {
 
@@ -785,6 +818,10 @@ mclib.ProcessList = function (timeout) {
             }
         }
 
+    };
+
+    if (!timeout) {
+        timeout = 1;
     }
 
     return {
@@ -914,7 +951,7 @@ mclib.ProcessList = function (timeout) {
 mclib.hooker = (function () {
     "use strict";
     var _mcobj = mclib.object,
-        _this = null;
+        _this = null,
 
     /**
         Register a hook to the hooker. 
@@ -931,7 +968,7 @@ mclib.hooker = (function () {
             }
 
     **/
-    function _register(setkey, hook) {
+    _register = function (setkey, hook) {
         if (_this) {
             if (_this[setkey]) {
                 if (_this[setkey].activehooks.indexOf(hook) === -1) {
@@ -945,7 +982,7 @@ mclib.hooker = (function () {
             }
         }
         return false;
-    }
+    },
     /**
         Unregister a hook from the hooker. 
 
@@ -960,7 +997,7 @@ mclib.hooker = (function () {
             }
 
     **/
-    function _unregister(setkey, hook) {
+    _unregister = function (setkey, hook) {
         if (_this) {
             if (_this[setkey]) {
                 var _loc = _this[setkey].activehooks.indexOf(hook);
@@ -971,7 +1008,7 @@ mclib.hooker = (function () {
             }
         }
         return false;
-    }
+    },
     /**
         Register a namespace containing hooks to the hooker. 
 
@@ -985,7 +1022,7 @@ mclib.hooker = (function () {
             var countregistered = mclib.hooker.registerNamespace("hookskeyname",external);
 
     **/
-    function _registerNamespace(setkey, namespace) {
+    _registerNamespace = function (setkey, namespace) {
         var cnt = 0;
 
         _mcobj.forEach(namespace, function (value, member) {
@@ -995,7 +1032,7 @@ mclib.hooker = (function () {
         });
 
         return cnt;
-    }
+    },
     /**
         Execute a set of hooks then returns an array of non-empty results.
 
@@ -1014,7 +1051,7 @@ mclib.hooker = (function () {
                 //because they are provided externally. 
             });
     **/
-    function _execute(setkey, sectionname, parameters, functionname) {
+    _execute = function (setkey, sectionname, parameters, functionname) {
 
         if (!functionname) functionname = "execute";
         if (!parameters) parameters = {};
@@ -1037,7 +1074,7 @@ mclib.hooker = (function () {
         }
 
         return _results;
-    }
+    },
     /**
         Create a hook set (there can be more than one). It will create a namespace based on the setkey. 
 
@@ -1058,11 +1095,11 @@ mclib.hooker = (function () {
             mclib.hooker.hookskeyname.register(...);// is not valid
 
     **/
-    function _create(setkey, initconfig) {
+    _create = function (setkey, initconfig) {
 
         if (!initconfig) initconfig = {};
         if (!initconfig.preregister) initconfig.preregister = false;
-        
+
         if (!_this) {
             _this = mclib.hooker;
         }
@@ -1077,7 +1114,7 @@ mclib.hooker = (function () {
                        @namespace mclib.hooker[setkey]
 
                 **/
-                    config: initconfig,
+                config: initconfig,
                 /**
                        Array of hooks considered active.  
            
@@ -1085,8 +1122,8 @@ mclib.hooker = (function () {
                        @namespace mclib.hooker[setkey]
 
                 **/
-                    activehooks: []
-                };
+                activehooks: []
+            };
 
 
             if (!initconfig.preregister) {
@@ -1125,18 +1162,18 @@ mclib.hooker = (function () {
                     }
                 });
             }
-            
+
             return _retobj;
         })();
 
         return _this[setkey];
-    }
+    };
 
     return {
         create: _create,
         execute: _execute,
         registerNamespace: _registerNamespace
-    }
+    };
 
 })();
 
@@ -1149,12 +1186,12 @@ mclib.hooker = (function () {
 **/
 mclib.inject = (function () {
 
-    function _addEvent(element, evnt, funct) {
+    var _addEvent = function (element, evnt, funct) {
         if (element.attachEvent)
             return element.attachEvent('on' + evnt, funct);
         else
             return element.addEventListener(evnt, funct, false);
-    }
+    };
 
     return {
         /**
@@ -1165,7 +1202,7 @@ mclib.inject = (function () {
             @namespace mclib.inject
         **/
         Scripts: function () {
-            "use strict;"
+            "use strict";
             var _scriptholder = {},
                 /**
                   Event that is triggered when injection is complete. 
@@ -1182,7 +1219,7 @@ mclib.inject = (function () {
        
                       injection.injectEnd.addHandler(handler);
                **/
-                _injectEnd = new mclib.Event();
+                _injectEnd = new mclib.Event(),
 
             /**
                 Add script to the list of scripts that will be injected. 
@@ -1199,13 +1236,13 @@ mclib.inject = (function () {
                                 return true;
                     });
             **/
-            function _add(name, url, async, condition) {
+            _add = function (name, url, async, condition) {
                 if (_scriptholder[name]) {
                     throw (name + ' already exists. Use a different name.');
                 }
 
                 _scriptholder[name] = { url: url, async: async, injected: condition() };
-            }
+            },
             /**
                 Inject each script in the list in order, waiting for each to be loaded. 
 
@@ -1214,7 +1251,7 @@ mclib.inject = (function () {
                 @example
                     injection.inject()
             **/
-            function _inject() {
+            _inject = function () {
                 var list = mclib.object.getMemberList(_scriptholder),
                     injected = false;
 
@@ -1242,13 +1279,13 @@ mclib.inject = (function () {
                 if (!injected) {
                     _injectEnd.triggerAsync();
                 }
-            }
+            };
 
             return {
                 add: _add,
                 inject: _inject,
                 injectEnd: _injectEnd
-            }
+            };
 
         },
         /**
@@ -1259,7 +1296,7 @@ mclib.inject = (function () {
             @namespace mclib.inject
         **/
         Styles: function () {
-            "use strict;"
+            "use strict";
             var _styleholder = {},
                 /**
                   Event that is triggered when injection is complete. 
@@ -1276,7 +1313,7 @@ mclib.inject = (function () {
        
                       injection.injectEnd.addHandler(handler);
                **/
-                _injectEnd = new mclib.Event();
+                _injectEnd = new mclib.Event(),
 
             /**
                 Add style link to the list of style links that will be injected. 
@@ -1289,13 +1326,13 @@ mclib.inject = (function () {
                     var injection = new mclib.inject.Styles();
                     injection.add("somestyle", "http://www.mydomain.com/mystyle.css");
             **/
-            function _add(name, url) {
+            _add = function (name, url) {
                 if (_styleholder[name]) {
                     throw (name + ' already exists. Use a different name.');
                 }
 
                 _styleholder[name] = { url: url, injected: false };
-            }
+            },
             /**
                 Inject each style link in the list in order.
 
@@ -1304,7 +1341,7 @@ mclib.inject = (function () {
                 @example
                     injection.inject()
             **/
-            function _inject() {
+            _inject = function () {
                 var list = mclib.object.getMemberList(_styleholder),
                     injected = false;
 
@@ -1314,7 +1351,7 @@ mclib.inject = (function () {
 
                     if (!_style.injected) {
                         var tag = document.createElement('link');
-                        tag.rel = "stylesheet"
+                        tag.rel = "stylesheet";
                         tag.type = 'text/css';
                         //tag.async = true;
                         tag.href = _style.url;
@@ -1328,16 +1365,16 @@ mclib.inject = (function () {
                 }
 
                 _injectEnd.triggerAsync();
-            }
+            };
 
             return {
                 add: _add,
                 inject: _inject,
                 injectEnd: _injectEnd
-            }
+            };
 
         }
-    }
+    };
 })();
 
 
